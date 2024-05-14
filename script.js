@@ -25,7 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
     { time: 90, text: "kono saki motto soba ni ite mo ii ka na?" },
     { time: 95, text: "koi to koi ga kasanatte" },
     { time: 99, text: "suki yo" },
-    { time: 100, text: "malas ngetik. lirik lanjutan nya ada di link di bawah ini" },
+    {
+      time: 100,
+      text: "malas ngetik. lirik lanjutan nya ada di link di bawah ini",
+    },
     // Add more lyrics as needed with their respective timestamps
   ];
 
@@ -56,4 +59,14 @@ document.addEventListener("DOMContentLoaded", function () {
   audioPlayer.addEventListener("timeupdate", function () {
     updateLyrics(audioPlayer.currentTime);
   });
+});
+
+const turnArm = document.getElementById("turn-arm");
+
+turnArm.addEventListener("click", function () {
+  if (turnArm.classList.contains("rotate-12")) {
+    turnArm.classList.remove("rotate-12");
+  } else {
+    turnArm.classList.add("rotate-12");
+  }
 });
