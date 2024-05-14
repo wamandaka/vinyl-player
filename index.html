@@ -17,11 +17,12 @@
       </p>
       <!-- Turn Table/Plinth -->
       <div
-        class="bg-slate-500 rounded-[50px] w-64 h-64 mt-7 relative shadow-2xl"
+        class="bg-slate-500 rounded-[50px] w-80 h-64 my-7 relative shadow-2xl"
       >
         <!-- Platter/Vinyl/Circle Black -->
         <div
-          class="bg-black rounded-full w-40 h-40 absolute top-[20%] left-[20%] overflow-hidden platter animate-spin"
+          id="vinyl"
+          class="bg-black rounded-full w-40 h-40 absolute top-[20%] left-[20%] overflow-hidden platter"
         >
           <!-- Spin Effects -->
           <div
@@ -37,10 +38,10 @@
             ></div>
           </div>
         </div>
-        <!-- Turn Arm -->
+        <!-- tone Arm -->
         <div
-          id="turn-arm"
-          class="bg-black w-10 h-10 rounded-full absolute right-1 top-9 shadow-2xl cursor-pointer"
+          id="tone-arm"
+          class="bg-black w-10 h-10 rounded-full absolute right-12 top-9 shadow-2xl transition-all duration-300 ease-in-out"
         >
           <div
             class="bg-slate-300 w-2 h-[100px] rounded-full absolute translate-x-4 top-5"
@@ -52,7 +53,44 @@
             </div>
           </div>
         </div>
+        <button
+          id="playBtn"
+          class="text-sm px-2 py-1 bg-black text-white absolute bottom-3 left-10 rounded-sm"
+        >
+          START
+          <span
+            id="indicator"
+            class="w-1 h-1 bg-red-600 rounded-full absolute right-1 bottom-1"
+          ></span>
+        </button>
+        <input
+          max="1"
+          min="0"
+          onchange="audioVolume(this.value)"
+          step="0.01"
+          value="1"
+          type="range"
+          name="range"
+          id="volumeRange"
+          class="absolute bottom-16 -right-2 origin-top w-20 -rotate-90 bg-red-500"
+        />
       </div>
+      <audio
+        src="assets/song/Si Anas Cakalanq 恋色 Koiiro - Mosawo (Cover).mp3"
+        id="audioPlayer"
+        controls
+        class="hidden"
+      ></audio>
+      <p id="lyricsDisplay" class="text-center mb-5"></p>
+      <p>
+        Referensi Lirik:
+        <a
+          target="_blank"
+          class="text-blue-600"
+          href="https://www.sonora.id/amp/423899744/lirik-lagu-koiiro-%E6%81%8B%E8%89%B2-mosawo-lengkap-dengan-terjemahan-indonesia"
+          >sonora.id</a
+        >
+      </p>
     </div>
     <script src="script.js"></script>
   </body>
