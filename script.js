@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const pauseButton = document.getElementById("pauseButton");
   const playPauseButton = document.getElementById("playPauseButton");
   const lyricsDisplay = document.getElementById("lyricsDisplay");
+  const spin = document.getElementById("spin");
 
   // Define lyrics with timestamps
   const lyrics = [
@@ -19,6 +20,12 @@ document.addEventListener("DOMContentLoaded", function () {
     { time: 70, text: "itsu datte tonari ni ite" },
     { time: 74, text: "watashi dake wo mitsumete kureta ne" },
     { time: 80, text: "suki yo" },
+    { time: 81, text: "ima anata ni omoi nosete" },
+    { time: 85, text: "hora sunao ni naru no watashi" },
+    { time: 90, text: "kono saki motto soba ni ite mo ii ka na?" },
+    { time: 95, text: "koi to koi ga kasanatte" },
+    { time: 99, text: "suki yo" },
+    { time: 100, text: "malas ngetik. lirik lanjutan nya ada di link di bawah ini" },
     // Add more lyrics as needed with their respective timestamps
   ];
 
@@ -39,7 +46,9 @@ document.addEventListener("DOMContentLoaded", function () {
   playPauseButton.addEventListener("click", function () {
     if (audioPlayer.paused) {
       audioPlayer.play();
+      spin.classList.add("spin-effect");
     } else {
+      spin.classList.remove("spin-effect");
       audioPlayer.pause();
     }
   });
