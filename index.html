@@ -9,14 +9,14 @@
   <body>
     <div class="container">
       <h1>Simple Music Player</h1>
-      <div class="turn-table">
-        <div class="platter">
-          <div class="platter-center"></div>
-          <div class="spin-effect"></div>
-        </div>
-        <div class="tone-arm"></div>
-      </div>
       <h4>Si Anas Cakalanq 恋色 Koiiro - Mosawo (Cover)</h4>
+      <div class="turn-table">
+        <button class="platter controls" id="playPauseButton">
+          <div id="spin" class=""></div>
+          <div class="platter-center"></div>
+        </button>
+        <!-- <div class="tone-arm"></div> -->
+      </div>
       <audio id="audioPlayer" controls>
         <source
           src="./assets/song/Si Anas Cakalanq 恋色 Koiiro - Mosawo (Cover).mp3"
@@ -25,9 +25,16 @@
         Your browser does not support the audio element.
       </audio>
       <div id="lyricsDisplay" class="lyrics"></div>
-      <div class="controls">
+      <p>
+        Referensi lirik:
+        <a
+          href="https://www.sonora.id/amp/423899744/lirik-lagu-koiiro-%E6%81%8B%E8%89%B2-mosawo-lengkap-dengan-terjemahan-indonesia"
+          >sonora.id</a
+        >
+      </p>
+      <!-- <div class="controls">
         <button id="playPauseButton">Play/pause</button>
-      </div>
+      </div> -->
     </div>
 
     <script src="script.js"></script>
