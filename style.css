@@ -1,6 +1,8 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f5f5f5;
+  max-width: 400px;
+  margin: 0 auto;
 }
 .container {
   text-align: center;
@@ -12,10 +14,15 @@ body {
   font-size: 18px;
 }
 
-.controls button {
-  margin: 10px;
+audio {
+  display: none;
+}
+
+.controls {
+  /* margin: 10px;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 16px; */
+  border: none;
   cursor: pointer;
 }
 
@@ -28,7 +35,6 @@ body {
   background: linear-gradient(90deg, #f0f0f0 0%, #f5f5f5 100%);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   overflow: hidden;
-  /* margin-bottom: 30px; */
 }
 
 .platter {
@@ -76,7 +82,7 @@ body {
   overflow: hidden;
 }
 
-.platter::before {
+.spin-effect {
   content: "";
   position: absolute;
   top: -150%;
@@ -84,8 +90,13 @@ body {
   width: 400%;
   height: 400%;
   background: linear-gradient(white, rgba(255, 255, 255, 0));
+  transition-timing-function: linear;
   animation: spin 2s infinite linear;
 }
+
+/* .spin {
+  animation: spin 2s infinite linear;
+} */
 
 .platter-center {
   position: absolute;
@@ -101,25 +112,16 @@ body {
 
 .tone-arm {
   position: absolute;
-  background-image: url("assets/img/tone-arm.png");
-  background-size: 90%;
+  background-image: url("assets/img/tone-arm.svg");
+  background-size: 70%;
   background-repeat: no-repeat;
   background-position: center;
-  width: 200px;
-  height: 200px;
-  top: 5%;
-  left: 43%;
+  width: 100%;
+  height: 100%;
+  top: -10%;
+  left: 20%;
   transform: rotate(-15deg);
   /* animation: spin 2s infinite linear; */
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .circle {
@@ -151,5 +153,14 @@ body {
 @keyframes move-down1 {
   to {
     transform: translateY(10px);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
